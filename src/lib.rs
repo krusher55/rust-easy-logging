@@ -80,7 +80,7 @@ fn configure_formatter(dispatcher: Dispatch, debug_mode: bool, colored_output: b
         dispatcher.format(move |out, message, record| {
             let level = record.level();
             let level_name = get_level_name(level);
-            let time = chrono::Local::now().format("[%T%.3f]");
+            let time = chrono::Local::now().format("[%Y-%m-%d %H:%M:%S%.9f]");
 
             let file = if let (Some(mut file), Some(line)) = (record.file(), record.line()) {
                 let mut file_width = 10;
